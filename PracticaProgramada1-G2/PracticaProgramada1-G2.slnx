@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/Assets/">
+    <File Path="Instrucciones.md" />
+  </Folder>
+  <Project Path="PP1_G2.Application/PP1_G2.Application.csproj" />
+  <Project Path="PP1_G2.Domain/PP1_G2.Domain.csproj" />
+  <Project Path="PP1_G2.Infrastructure/PP1_G2.Infrastructure.csproj" />
+  <Project Path="PP1_G2.UI/PP1_G2.UI.csproj" />
+</Solution>
