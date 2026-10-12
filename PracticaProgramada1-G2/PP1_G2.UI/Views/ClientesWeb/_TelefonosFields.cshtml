@@ -1,0 +1,20 @@
+@model IReadOnlyList<string>
+
+<div class="mb-3">
+	<div class="d-flex justify-content-between align-items-center mb-2">
+		<label class="form-label mb-0">Teléfonos</label>
+		<button type="button" class="btn btn-sm btn-outline-primary" data-telefono-add>Añadir teléfono</button>
+	</div>
+	<div class="text-danger mb-2">
+		@Html.ValidationMessage("Telefonos")
+	</div>
+	<div data-telefono-list>
+		@for (var i = 0; i < Model.Count; i++)
+		{
+			<div class="input-group mb-2" data-telefono-row>
+				<input type="tel" name="Telefonos[@i]" value="@Model[i]" class="form-control" autocomplete="tel" />
+				<button type="button" class="btn btn-outline-danger" data-telefono-remove aria-label="Quitar teléfono">Quitar</button>
+			</div>
+		}
+	</div>
+</div>

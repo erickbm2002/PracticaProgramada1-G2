@@ -1,0 +1,27 @@
+@model PP1_G2.Application.Dtos.ClienteDetalleDto
+
+@{
+	ViewData["Title"] = "Eliminar cliente";
+}
+
+<h1 class="h2 text-danger mb-3">Eliminar cliente</h1>
+<div class="alert alert-warning" role="alert">
+	Se eliminará definitivamente el cliente y todos sus teléfonos asociados.
+</div>
+
+<dl class="row">
+	<dt class="col-sm-3">Nombre</dt>
+	<dd class="col-sm-9">@Model.Nombre @Model.Apellido</dd>
+
+	<dt class="col-sm-3">Correo electrónico</dt>
+	<dd class="col-sm-9">@(Model.Email ?? "—")</dd>
+
+	<dt class="col-sm-3">Teléfonos</dt>
+	<dd class="col-sm-9">@(Model.Telefonos.Count > 0 ? string.Join(", ", Model.Telefonos) : "—")</dd>
+</dl>
+
+<form asp-action="DeleteConfirmed" method="post">
+	<input type="hidden" name="id" value="@Model.Id" />
+	<button type="submit" class="btn btn-danger">Confirmar eliminación</button>
+	<a asp-action="Index" class="btn btn-outline-secondary">Cancelar</a>
+</form>
